@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clickoncar News</title>
+</head>
+<body>
+{% block content %}
+{% for article in object_list %}
+<div class="article-entry">
+<h2><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></h2>
+    <h5>{{ article.datetime }}</h5>
+<p>{{ article.description }}</p>
+</div>
+{% endfor %}
+{% endblock content %}
+
+</body>
+</html>

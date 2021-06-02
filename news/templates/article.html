@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>{{ object.title }}</title>
+    {% endblock title %}
+
+</head>
+<body>
+{% block content %}
+<div class="post-entry">
+<h2>{{ object.title }}</h2>
+    <h6>{{ object.author }}, {{ object.datetime }}, modified {{ object.datetime_modify }}</h6>
+<p>{{ object.text|safe }}</p>
+</div>
+{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for dealer in object_list %}
+<div class="dealer-entry">
+<a href="{% url 'dealers_by_brand' dealer.brand.tag %}{{ dealer.pk }}/">{{ dealer.company_name }}</a>
+</div>
+{% endfor %}
+{% endblock content %}
+
