@@ -1,9 +1,30 @@
 {% extends 'base.html' %}
+{% block script %}
+    <style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: auto auto;
+    }
+[class^="grid-item"] {
+  border: 1px solid #fff;
+  min-height: 2.5em;
+  font-size: 1.5em;
+  line-height: 2.5em;
+  text-align: center;
+  color: #fff;
+}
+.grid-item {
 
+}
+</style>
+{% endblock script %}
 {% block content %}
+    <div class="grid-container">
     {% for dealer in object_list %}
-        <div class="brands_list">
-        <a href="{% url 'brands_list' %}{{ dealer.brand.tag }}/">{{ dealer.brand }}</a>
+        <div class="grid-item">
+        <a href="{% url 'brands_list' %}{{ dealer.slug }}/">{{ dealer.brand }}</a>
         </div>
     {% endfor %}
+    </div>
 {% endblock content %}

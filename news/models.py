@@ -14,13 +14,18 @@ class Author(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=100, blank=False)
-    url = models.SlugField(max_length=100, blank=False)
+    slug = models.SlugField(max_length=100, blank=False)
     description = models.TextField(blank=False)
     tags = models.CharField(max_length=100, blank=False)
     text = RichTextUploadingField(blank=False)
+    image = models.ImageField(verbose_name='Картинка на главную')
     datetime = models.DateTimeField(auto_now_add=True)
     datetime_modify = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        get_latest_by = 'datetime'
+        ordering = ['-datetime']

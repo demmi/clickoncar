@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% block title %}
-    <title>{{ object.title }}</title>
-    {% endblock title %}
+{% extends 'base.html' %}
 
-</head>
-<body>
 {% block content %}
-<div class="post-entry">
-<h2>{{ object.title }}</h2>
-    <h6>{{ object.author }}, {{ object.datetime }}, modified {{ object.datetime_modify }}</h6>
-<p>{{ object.text|safe }}</p>
-</div>
+
+    <div class="card">
+        <h2>{{ object.title }}</h2>
+        <h4>{{ object.datetime }}, modified {{ object.datetime_modify }}</h4>
+        <h5>{{ object.author }}</h5>
+        <p>{{ object.text|safe }}</p>
+    </div>
+
 {% endblock content %}
-</body>
-</html>

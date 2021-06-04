@@ -59,7 +59,7 @@ ROOT_URLCONF = 'clickoncar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,6 +131,7 @@ STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, 'news'),
     os.path.join(BASE_DIR, 'catalog', 'static'),
     os.path.join(BASE_DIR, 'news', 'static'),
+    os.path.join(BASE_DIR, 'templates'),
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

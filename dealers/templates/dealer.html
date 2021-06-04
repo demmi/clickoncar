@@ -55,11 +55,12 @@
 
 
 {% block content %}
-    <div class="dealer_name">{{ object.company_name }}</div>
-    <div class="dealer_address">{{ object.city }}, {{ object.address }}</div>
-    <div class="dealer_phone">{{ object.phone }}</div>
-    <div class="dealer_url"><a href="{{ object.url }}">{{ object.url|safe }}</a></div>
-
-<div id="map" style="width: 600px; height: 400px"></div>
+    <div class="card">
+      <h2>{{ object.company_name }}</h2>
+        <h3>{{ object.city }}, {{ object.address }}</h3>
+        <h4>{{ object.phone }}</h4>
+        <h4><a href="{{ object.url }}">{{ object.url|safe }}</a></h4>
+        <div id="map" style="width: 100%; height: 400px"></div>
+    </div>
 {% endblock content %}
 
