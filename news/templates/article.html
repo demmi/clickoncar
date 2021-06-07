@@ -5,7 +5,7 @@
     <div class="card">
         <h2>{{ object.title }}</h2>
         <h4>{{ object.datetime }}, modified {{ object.datetime_modify }}</h4>
-        <h5>{{ object.author }}</h5>
+        <h5>{{ object.author.first_name }} {{ object.author.last_name }}</h5>
         <p>{{ object.text|safe }}</p>
     </div>
 

@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, FormView, CreateView
 from .models import Article
+from .forms import AddPost
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.http import HttpResponse
 
 
 class ArticleListView(ListView):
@@ -20,5 +24,8 @@ class ArticleLastView(ListView):
     template_name = 'lastnews.html'
 
 
-class ArticleNew():
-    pass
+@method_decorator(login_required, name='dispatch')
+class NewsManager(CreateView):
+    form_class = AddPost(author=request.user)
+    template_name = 'adminpanel.html'
+    success_url = '/news/'

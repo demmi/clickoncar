@@ -144,3 +144,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = "news/static/images"
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+LOGIN_REDIRECT_URL = "/admin/"
