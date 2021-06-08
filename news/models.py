@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class Article(models.Model):
@@ -12,7 +13,7 @@ class Article(models.Model):
     image = models.ImageField(verbose_name='Картинка на главную')
     datetime = models.DateTimeField(auto_now_add=True)
     datetime_modify = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

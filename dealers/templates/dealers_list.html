@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block script %}
-       <style>
+<style>
     .grid-container {
         display: grid;
         grid-template-columns: 33% 33% 33%;
@@ -24,7 +24,7 @@
         <div class="grid-container">
             {% for dealer in dealers_list %}
             <div class="grid-item">
-                <h2><a href="{% url 'dealers_by_brand' dealer.brand.slug %}{{ dealer.pk }}/">{{ dealer.company_name }}</a></h2>
+                <h2><a href="{{ dealer.pk }}/">{{ dealer.company_name }}</a></h2>
             </div>
             {% endfor %}
         </div>
