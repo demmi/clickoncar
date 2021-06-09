@@ -23,7 +23,6 @@ class ArticleLastView(ListView):
     template_name = 'lastnews.html'
 
 
-#@method_decorator(login_required, name='dispatch')
 @method_decorator(permission_required('news.add_article'), name='dispatch')
 class NewsManager(LoginRequiredMixin, CreateView):
     form_class = AddPost
