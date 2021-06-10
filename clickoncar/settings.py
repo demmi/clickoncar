@@ -108,9 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Minsk'
 
 USE_I18N = True
 
@@ -127,8 +127,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'clickoncar', 'static'),
     os.path.join(BASE_DIR, 'news', 'static', 'images'),
-#    os.path.join(BASE_DIR, 'catalog'),
-#    os.path.join(BASE_DIR, 'news'),
     os.path.join(BASE_DIR, 'catalog', 'static'),
     os.path.join(BASE_DIR, 'news', 'static'),
     os.path.join(BASE_DIR, 'templates'),
