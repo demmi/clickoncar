@@ -7,6 +7,7 @@ class Dealer(models.Model):
     url = models.URLField(verbose_name='Сайт')
     phone = models.CharField(max_length=50, verbose_name='Номер телефона')
     city = models.CharField(max_length=50, blank=False, verbose_name='Город')
+    city_slug = models.SlugField(max_length=50, blank=False, verbose_name='url города')
     address = models.CharField(max_length=50, blank=False, verbose_name='Адрес')
     coordinates = models.CharField(max_length=50, blank=False, verbose_name='Координаты в Яндекс.Картах')
     brand = models.ForeignKey(catalog.Brand, on_delete=models.CASCADE, verbose_name='Марка')

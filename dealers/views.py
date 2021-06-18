@@ -18,7 +18,19 @@ class DealersListView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['dealers_list'] = Dealer.objects.filter(brand__slug=self.kwargs['slug'])
+        context['dealer_list'] = Dealer.objects.filter(brand__slug=self.kwargs['slug']).filter(city_slug=self.kwargs['city_slug'])
+        return context
+
+
+class DealersCityView(ListView):
+    model = Dealer
+    template_name = 'city_list.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['city_list'] = {}
+        for dealer in Dealer.objects.filter(brand__slug=self.kwargs['slug']):
+            context['city_list'][dealer.city] = dealer.city_slug
         return context
 
 
