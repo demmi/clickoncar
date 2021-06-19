@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class ArticleListView(ListView):
     model = Article
-    paginate_by = 3
+    paginate_by = 5
     template_name = 'news.html'
 
 
@@ -19,7 +19,7 @@ class ArticleDetailView(DetailView):
 
 class ArticleLastView(ListView):
     model = Article
-    paginate_by = 3
+    paginate_by = 5
     template_name = 'lastnews.html'
 
 
