@@ -20,7 +20,7 @@
                         </div>
                     <div class="col-md-7 animate-box">
                         <a href="{% url 'article_detail' article.slug %}" class="fh5co_magna py-2"> {{ article.title }}
-                        </a> <a href="#" class="fh5co_mini_time py-3"> {{ article.author }} - {{ article.datetime }} </a>
+                        </a> <a href="#" class="fh5co_mini_time py-3"> {{ article.author.first_name }} {{ article.author.last_name }} - {{ article.datetime }} </a>
                         <div class="fh5co_consectetur"> {{ article.description }}
                         </div>
                     </div>
